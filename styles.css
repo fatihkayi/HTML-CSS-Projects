@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive;
+    background: #ffd6e7;
+    overflow-x: hidden;
+}
+
+/* Floating Shapes Animation */
+.floating-shapes {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    animation: float 15s infinite linear;
+    opacity: 0.3;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ff6b6b;
+    left: 10%;
+}
+
+.square {
+    width: 40px;
+    height: 40px;
+    background: #4ecdc4;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 50px solid #ffe66d;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+.star {
+    width: 0;
+    height: 0;
+    border-right: 30px solid transparent;
+    border-bottom: 20px solid #6c5ce7;
+    border-left: 30px solid transparent;
+    right: 25%;
+    animation-delay: 6s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-100px) rotate(180deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    border-radius: 0 0 50% 50% / 20px;
+}
+
+.bounce {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 3px 3px #ff6b6b;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+/* Categories Section */
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 1rem;
+}
+
+.category {
+    text-align: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.category:hover {
+    transform: translateY(-10px);
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Featured Section */
+.featured {
+    padding: 3rem 1rem;
+}
+
+.featured h2 {
+    text-align: center;
+    color: #ff6b6b;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.toy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.toy-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.toy-image {
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.rainbow-bear {
+    background-color: #ffd6e7;
+}
+
+.paint-set {
+    background-color: #4ecdc4;
+}
+
+.blocks {
+    background-color: #ffe66d;
+}
+
+.wobble-button {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.wobble-button:hover {
+    animation: wobble 0.5s ease-in-out;
+}
+
+@keyframes wobble {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Fun Facts Section */
+.fun-facts {
+    padding: 3rem 1rem;
+    background: #ffe66d;
+    border-radius: 50px 50px 0 0;
+}
+
+.fun-facts h2 {
+    text-align: center;
+    color: #ff6b6b;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.facts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.fact {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    background: #ff9a9e;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bounce {
+        font-size: 3rem;
+    }
+
+    .categories {
+        gap: 1rem;
+    }
+
+    .category {
+        width: calc(50% - 1rem);
+    }
+}
